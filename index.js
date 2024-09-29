@@ -1,13 +1,27 @@
 function getComputerChoice() {
     let randomNum = Math.random();
-    let choice;
+    let Computerchoice;
     if (randomNum < 0.333)
-        choice = "rock";
+        Computerchoice = "rock";
     else if (randomNum < 0.666)
-        choice = "paper";
+        Computerchoice = "paper";
     else
-        choice = "scissor";
-    return choice;
+        Computerchoice = "scissor";
+    return Computerchoice;
 }
 
-console.log(getComputerChoice());
+function getHumanChoice() {
+    let HumanChoice = prompt("Enter rock, paper, or scissors");
+    HumanChoice = HumanChoice.toLowerCase();
+    if (HumanChoice == "rock")
+        return "rock";
+    else if (HumanChoice == "paper")
+        return "paper";
+    else if (HumanChoice == "scissors")
+        return "scissors";
+    else {
+        console.log("Invalid option. Try again");
+        getHumanChoice();
+    }
+    return HumanChoice;
+}
